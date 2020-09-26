@@ -123,6 +123,47 @@
         },
         "shared-modules/linux-audio/lv2.json",
         {
+            "name": "kpp-vst3",
+            "buildsystem": "simple",
+            "build-options": {
+                "env": {
+                    "CFLAGS": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
+                    "CXXFLAGS": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
+                    "LDFLAGS": "-L/app/extensions/Plugins/KapitonovPluginsPack/lib -lfftw3f -lpthread"
+                }
+            },
+            "build-commands": [
+                "mkdir VST_SDK/VST3_SDK/build",
+                "cd VST_SDK/VST3_SDK/build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_LINKER_FLAGS=-L/app/extensions/Plugins/KapitonovPluginsPack/lib -DSMTG_MYPLUGINS_SRC_PATH=../../.. -DVSTGUI_STANDALONE=OFF -DSMTG_ADD_VST3_PLUGINS_SAMPLES=OFF -DSMTG_ADD_VST3_HOSTING_SAMPLES=OFF ..",
+                "ninja -C VST_SDK/VST3_SDK/build"
+            ],
+            "post-install": [
+                "install -d ${FLATPAK_DEST}/vst3",
+                "cp -R VST_SDK/VST3_SDK/build/VST3/Release/*.vst3 ${FLATPAK_DEST}/vst3",
+                "install -Dm644 -t $FLATPAK_DEST/share/licenses/kpp-vst3/ LICENSE.txt"
+            ],
+            "modules": [
+                "gtkmm3.json"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/olegkapitonov/KPP-VST3/archive/1.2.1.tar.gz",
+                    "sha256": "5a46714836723d73fb44f0024aab8d141a182b41454672257e4ad142154b2de8"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://download.steinberg.net/sdk_downloads/vst-sdk_3.7.0_build-116_2020-07-31.zip",
+                    "sha256": "d926742480b62d246b18972ff6d61f9b1b894b91e1a33e00f98a8627a61775ba",
+                    "dest": "VST_SDK"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/kpp-vst-build.patch"
+                }
+            ]
+        },
+        {
             "name": "kpp",
             "buildsystem": "meson",
             "build-options": {
