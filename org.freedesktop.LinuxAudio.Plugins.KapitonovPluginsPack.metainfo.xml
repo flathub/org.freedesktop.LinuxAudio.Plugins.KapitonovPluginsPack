@@ -3,10 +3,10 @@
   <id>org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack</id>
   <extends>org.freedesktop.LinuxAudio.BaseExtension</extends>
   <name>KapitonovPluginsPack</name>
-  <summary>KapitonovPluginsPack Guitar amp LADSPA/LV2 plugins</summary>
+  <summary>KapitonovPluginsPack Guitar amp LADSPA/LV2/VST3 plugins</summary>
   <description>
     <p>
-      KapitonovPluginsPack contains the following LADSPA/LV2 plugins
+      KapitonovPluginsPack contains the following LADSPA/LV2/VST3 plugins
       to customize your guitar tones:
     </p>
     <ul>
