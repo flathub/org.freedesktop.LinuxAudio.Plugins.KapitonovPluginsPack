@@ -1,0 +1,10 @@
+--- faust/architecture/faust/gui/JSONUI.h-orig	2021-09-04 09:21:54.847908656 -0400
++++ faust/architecture/faust/gui/JSONUI.h	2021-09-04 09:22:11.527123608 -0400
+@@ -32,6 +32,7 @@
+ #include <iomanip>
+ #include <sstream>
+ #include <algorithm>
++#include <limits>
+ 
+ #include "faust/gui/UI.h"
+ #include "faust/gui/PathBuilder.h"

@@ -1,0 +1,20 @@
+--- a/VST_SDK/VST3_SDK/vstgui4/vstgui/lib/vstguifwd.h	2021-09-04 09:57:10.711202026 -0400
++++ b/VST_SDK/VST3_SDK/vstgui4/vstgui/lib/vstguifwd.h	2021-09-04 09:57:28.175423295 -0400
+@@ -6,6 +6,7 @@
+ 
+ #include "vstguibase.h"
+ #include <functional>
++#include <limits>
+ 
+ namespace VSTGUI {
+ 
+--- kpp-vst3/VST_SDK/VST3_SDK/vstgui4/vstgui/lib/vstguidebug.cpp-orig	2021-09-04 09:59:55.471289517 -0400
++++ kpp-vst3/VST_SDK/VST3_SDK/vstgui4/vstgui/lib/vstguidebug.cpp	2021-09-04 10:00:07.249438743 -0400
+@@ -4,6 +4,7 @@
+ 
+ #include "vstguidebug.h"
+ #include <cstdarg>
++#include <exception>
+ 
+ #if DEBUG
+ 

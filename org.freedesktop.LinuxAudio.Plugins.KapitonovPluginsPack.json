@@ -19,6 +19,7 @@
             "name": "faust",
             "buildsystem": "simple",
             "build-options": {
+                "cxxflags": "-fpermissive",
                 "env": {
                     "PREFIX": "${FLATPAK_DEST}"
                 }
@@ -39,6 +40,10 @@
                     "type": "archive",
                     "url": "https://github.com/grame-cncm/faust/releases/download/2.20.2/faust-2.20.2.tar.gz",
                     "sha256": "c32588ee60d0f7ca25034d3d5436def6b35495f4d3beb3b02208d48684bcfbe9"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/faust-build.patch"
                 }
             ]
         },
@@ -160,6 +165,10 @@
                 {
                     "type": "patch",
                     "path": "patches/kpp-vst-build.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/kpp-vst-gcc.patch"
                 }
             ]
         },
