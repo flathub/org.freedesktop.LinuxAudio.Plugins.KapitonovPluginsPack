@@ -183,6 +183,7 @@
                 }
             },
             "config-opts": [
+                "-Dbuildtype=release",
                 "-Dlv2=enabled",
                 "-Dlv2dir=/app/extensions/Plugins/KapitonovPluginsPack/lv2",
                 "-Dladspa=enabled",
