@@ -1,0 +1,13 @@
+diff --git a/kpp_tubeamp/include/profile.h b/kpp_tubeamp/include/profile.h
+index e4d8414..decf1c5 100644
+--- a/kpp_tubeamp/include/profile.h
++++ b/kpp_tubeamp/include/profile.h
+@@ -20,6 +20,8 @@
+ #ifndef PROFILE_H
+ #define PROFILE_H
+ 
++#include <cstdint>
++
+ // Structure with tubeAmp model
+ // parameters.
+ 

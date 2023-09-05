@@ -1,0 +1,12 @@
+diff --git a/compiler/generator/wasm/wasm_dsp_aux.hh b/compiler/generator/wasm/wasm_dsp_aux.hh
+index c59663f..7629d99 100644
+--- a/compiler/generator/wasm/wasm_dsp_aux.hh
++++ b/compiler/generator/wasm/wasm_dsp_aux.hh
+@@ -22,6 +22,7 @@
+ #ifndef WASM_DSP_AUX_H
+ #define WASM_DSP_AUX_H
+ 
++#include <cstdint>
+ #include <cstdlib>
+ #include <string>
+ #include <vector>

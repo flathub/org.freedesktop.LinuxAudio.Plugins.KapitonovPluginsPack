@@ -1,9 +1,9 @@
 {
     "id": "org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack",
-    "branch": "22.08",
+    "branch": "23.08",
     "runtime": "org.freedesktop.LinuxAudio.BaseExtension",
     "runtime-version": "stable",
-    "sdk": "org.freedesktop.Sdk//22.08",
+    "sdk": "org.freedesktop.Sdk//23.08",
     "build-extension": true,
     "appstream-compose": false,
     "build-options": {
@@ -43,7 +43,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/faust-build.patch"
+                    "paths": [
+                        "patches/faust-build.patch",
+                        "patches/faust-build2.patch"
+                    ]
                 }
             ]
         },
@@ -117,7 +120,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://web.archive.org/web/20220728030912/http://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-resampler-1.6.2.tar.bz2",
+                    "url": "https://web.archive.org/web/20191007154905/http://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-resampler-1.6.2.tar.bz2",
                     "sha256": "233baefee297094514bfc9063e47f848e8138dc7c959d9cd957b36019b98c5d7"
                 },
                 {
@@ -164,11 +167,12 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/kpp-vst-build.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/kpp-vst-gcc.patch"
+                    "paths": [
+                        "patches/kpp-vst-build.patch",
+                        "patches/kpp-vst-gcc.patch",
+                        "patches/kpp-vst3-build.patch",
+                        "patches/kpp-vst3sdk-build.patch"
+                    ]
                 }
             ]
         },
