@@ -1,11 +1,10 @@
 {
     "id": "org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack",
-    "branch": "23.08",
+    "branch": "24.08",
     "runtime": "org.freedesktop.LinuxAudio.BaseExtension",
     "runtime-version": "stable",
-    "sdk": "org.freedesktop.Sdk//23.08",
+    "sdk": "org.freedesktop.Sdk//24.08",
     "build-extension": true,
-    "appstream-compose": false,
     "build-options": {
         "prefix": "/app/extensions/Plugins/KapitonovPluginsPack",
         "prepend-path": "/app/extensions/Plugins/KapitonovPluginsPack/bin",
@@ -65,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2",
-                    "sha256": "686affff989ac2488f79a97b9479efb9f2abae035b5ed4d8226de6857933fd3b"
+                    "url": "https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2",
+                    "sha256": "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
                 }
             ]
         },
@@ -195,7 +194,6 @@
                 "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
                 "strip ${FLATPAK_DEST}/ladspa/*.so",
                 "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack.metainfo.xml",
-                "appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/kpp/ ../LICENSE.txt"
             ],
             "sources": [
