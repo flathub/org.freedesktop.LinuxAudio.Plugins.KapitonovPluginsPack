@@ -10,3 +10,23 @@ index ff910aa..f15ae78 100644
  #include <string>
  
  //------------------------------------------------------------------------
+--- a/VST_SDK/VST3_SDK/public.sdk/source/vst/utility/uid.h	2025-09-01 23:24:09.389433472 -0400
++++ b/VST_SDK/VST3_SDK/public.sdk/source/vst/utility/uid.h	2025-09-01 23:24:30.858394059 -0400
+@@ -39,6 +39,7 @@
+ #include "optional.h"
+ #include "pluginterfaces/base/funknown.h"
+ #include <string>
++#include <cstdint>
+ 
+ //------------------------------------------------------------------------
+ namespace VST3 {
+--- a/VST_SDK/VST3_SDK/public.sdk/source/vst/utility/vst2persistence.cpp	2025-09-01 23:27:27.457018042 -0400
++++ b/VST_SDK/VST3_SDK/public.sdk/source/vst/utility/vst2persistence.cpp	2025-09-01 23:27:52.524540624 -0400
+@@ -33,6 +33,7 @@
+ // OF THE POSSIBILITY OF SUCH DAMAGE.
+ //-----------------------------------------------------------------------------
+ 
++#include <cstdint>
+ #include "public.sdk/source/vst/utility/vst2persistence.h"
+ #include "pluginterfaces/base/fplatform.h"
+ #include <limits>
