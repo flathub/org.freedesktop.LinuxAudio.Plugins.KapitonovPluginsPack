@@ -134,11 +134,9 @@
             "name": "kpp-vst3",
             "buildsystem": "simple",
             "build-options": {
-                "env": {
-                    "CFLAGS": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
-                    "CXXFLAGS": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
-                    "LDFLAGS": "-L/app/extensions/Plugins/KapitonovPluginsPack/lib -lfftw3f -lpthread"
-                }
+                "ldflags": "-L/app/extensions/Plugins/KapitonovPluginsPack/lib -lfftw3f -lpthread",
+                "cflags": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
+                "cxxflags": "-I/app/extensions/Plugins/KapitonovPluginsPack/include"
             },
             "build-commands": [
                 "mkdir VST_SDK/VST3_SDK/build",
@@ -182,7 +180,7 @@
             "build-options": {
                 "cflags": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
                 "cxxflags": "-I/app/extensions/Plugins/KapitonovPluginsPack/include",
-                "ldflags": "-L/app/extensions/Plugins/KapitonovPluginsPack/lib -lfftw3f -lpthread"
+                "ldflags": "-L/app/extensions/Plugins/KapitonovPluginsPack/lib -lfftw3f -lpthread -lstdc++ -lm"
             },
             "config-opts": [
                 "-Dbuildtype=release",
