@@ -1,9 +1,9 @@
 {
     "id": "org.freedesktop.LinuxAudio.Plugins.KapitonovPluginsPack",
-    "branch": "24.08",
+    "branch": "25.08",
     "runtime": "org.freedesktop.LinuxAudio.BaseExtension",
     "runtime-version": "stable",
-    "sdk": "org.freedesktop.Sdk//24.08",
+    "sdk": "org.freedesktop.Sdk//25.08",
     "build-extension": true,
     "build-options": {
         "prefix": "/app/extensions/Plugins/KapitonovPluginsPack",
@@ -20,7 +20,8 @@
             "build-options": {
                 "cxxflags": "-fpermissive",
                 "env": {
-                    "PREFIX": "${FLATPAK_DEST}"
+                    "PREFIX": "${FLATPAK_DEST}",
+                    "CMAKEOPT": "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                 }
             },
             "build-commands": [
@@ -141,7 +142,7 @@
             },
             "build-commands": [
                 "mkdir VST_SDK/VST3_SDK/build",
-                "cd VST_SDK/VST3_SDK/build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_LINKER_FLAGS=-L/app/extensions/Plugins/KapitonovPluginsPack/lib -DSMTG_MYPLUGINS_SRC_PATH=../../.. -DVSTGUI_STANDALONE=OFF -DSMTG_ADD_VST3_PLUGINS_SAMPLES=OFF -DSMTG_ADD_VST3_HOSTING_SAMPLES=OFF ..",
+                "cd VST_SDK/VST3_SDK/build && cmake -G Ninja -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_MODULE_LINKER_FLAGS=-L/app/extensions/Plugins/KapitonovPluginsPack/lib -DSMTG_MYPLUGINS_SRC_PATH=../../.. -DVSTGUI_STANDALONE=OFF -DSMTG_ADD_VST3_PLUGINS_SAMPLES=OFF -DSMTG_ADD_VST3_HOSTING_SAMPLES=OFF ..",
                 "ninja -C VST_SDK/VST3_SDK/build"
             ],
             "post-install": [
